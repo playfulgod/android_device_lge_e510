@@ -44,6 +44,9 @@ hwui.disable_vsync=true
 hwui.print_config=choice 
 debug.enabletr=false
 
+#USB compatibility for ICS
+persist.sys.usb.config=mass_storage,adb
+
 ## wifi
 wifi.interface=eth0
 wifi.supplicant_scan_interval=120
