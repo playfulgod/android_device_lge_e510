@@ -17,15 +17,12 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-# boot.img temp files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bootimg/init.rc:root/init.rc
-
 # Board-specific init
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/initlogo.rle:root/initlogo.rle \
     $(LOCAL_PATH)/init.univa.rc:root/init.univa.rc \
-    $(LOCAL_PATH)/ueventd.univa.rc:root/ueventd.univa.rc
+    $(LOCAL_PATH)/ueventd.univa.rc:root/ueventd.univa.rc \
+    $(LOCAL_PATH)/init.univa.usb.rc:root/init.univa.usb.rc 
 
 # BT startup
 PRODUCT_COPY_FILES += \
@@ -37,7 +34,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/univa_keypad.kl:system/usr/keylayout/univa_keypad.kl \
     $(LOCAL_PATH)/configs/AudioFilter.csv:system/etc/AudioFilter.csv \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/prebuilt/LatinIME.apk:system/app/LatinIME.apk
+    $(LOCAL_PATH)/prebuilt/LatinIME.apk:system/app/LatinIME.apk \
+    $(LOCAL_PATH)/configs/7k_handset.kl:system/usr/keylayout/7k_handset.kl 
 
 # WiFi
 PRODUCT_COPY_FILES += \
@@ -80,7 +78,6 @@ PRODUCT_COPY_FILES += \
 # IDC file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc \
-    $(LOCAL_PATH)/configs/touch_mcs6000.idc:system/usr/idc/touch_mcs6000.idc \
     $(LOCAL_PATH)/configs/qt602240_ts_input.idc:system/usr/idc/qt602240_ts_input.idc 
 
 
@@ -93,13 +90,16 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    libgenlock \
     libmemalloc \
-    libopencorehw \
     liboverlay \
     libQcomUI \
-    libtilerenderer
+    libtilerenderer \
+    libopencorehw \
+    gralloc.msm7x27 \
+    hwcomposer.msm7x27
 
-# Media
+# QCOM OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \
     libOmxCore \
@@ -115,7 +115,6 @@ PRODUCT_PACKAGES += \
     hwaddrs \
     lgapversion \
     hcitool
-
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

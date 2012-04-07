@@ -113,19 +113,29 @@ PRODUCT_COPY_FILES += \\
 ## HAL
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.msm7k.so:system/lib/hw/sensors.msm7k.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gralloc.e510.so:system/lib/hw/gralloc.e510.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.msm7k.so:system/lib/hw/sensors.msm7k.so 
 
 ## EGL
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \\
+     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libC2D2.so:system/lib/libC2D2.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libOpenVG.so:system/lib/libOpenVG.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libsc-a2xx.so:system/lib/libsc-a2xx.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/a225_pfp.fw:system/etc/firmware/a225_pfp.fw \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/a300_pfp.fw:system/etc/firmware/a300_pfp.fw \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/a300_pm4.fw:system/etc/firmware/a300_pm4.fw \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470 \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470 \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \\ 
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libgsl.so:system/lib/libgsl.so 
 
 ## Sensors
 PRODUCT_COPY_FILES += \\
@@ -158,20 +168,21 @@ PRODUCT_COPY_FILES += \\
 
 ## Camera
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:system/lib/libcamera.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libcamera.so:obj/lib/libcamera.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/liboemcamera.so:system/lib/liboemcamera.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liboemcamera.so:obj/lib/liboemcamera.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmmipl.so:system/lib/libmmipl.so
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libmmjpeg.so:obj/lib/libmmjpeg.so 
 
 ## BT
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/firmware/BCM4330B1_002.001.003.0337.0338.hcd:system/etc/firmware/BCM4330B1_002.001.003.0337.0338.hcd
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/BCM4330B1_002.001.003.0337.0338.hcd:system/bin/BCM4330B1_002.001.003.0337.0338.hcd
 
 ## WiFi
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc.bin:system/etc/wl/rtecdc.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc-apsta.bin:system/etc/wl/rtecdc-apsta.bin
+    vendor/__VENDOR__/__DEVICE__/proprietary/etc/wl/rtecdc-apsta.bin:system/etc/wl/rtecdc-apsta.bin \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/dhcpcd:system/bin/dhcpcd 
 EOF
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/BoardConfigVendor.mk

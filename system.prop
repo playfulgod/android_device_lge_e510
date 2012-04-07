@@ -19,12 +19,6 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.ril.v3=signalstrength,skipbrokendatacall,facilitylock,datacall,icccardstatus,1
 mobiledata.interfaces=rmnet0,rmnet1,rmnet2
 
-persist.sys.use_dithering=1
-debug.sf.hw=1
-ro.sf.compbypass.enable=1	
-com.qc.hardware=true	
-com.qc.hdmi_out=false
-
 # larger vm heaps
 dalvik.vm.heapsize=24m
 
@@ -46,10 +40,6 @@ debug.enabletr=false
 
 #USB compatibility for ICS
 persist.sys.usb.config=mass_storage,adb
-
-## wifi
-wifi.interface=eth0
-wifi.supplicant_scan_interval=120
 
 ##power saving
 pm.sleep_mode=1        
