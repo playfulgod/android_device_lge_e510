@@ -19,7 +19,7 @@ DEVICE_PACKAGE_OVERLAYS += device/lge/e510/overlay
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.qcom.rc:root/init.qcom.rc \
     $(LOCAL_PATH)/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(LOCAL_PATH)/init.alessi.usb.rc:root/init.alessi.usb.rc
+    $(LOCAL_PATH)/init.e510.usb.rc:root/init.e510.usb.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/initlogo.rle:root/initlogo.rle \
