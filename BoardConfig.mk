@@ -45,7 +45,7 @@ BOARD_USE_SKIA_LCDTEXT := true
 
 
 # Fix this up by examining /proc/mtd on a running device
-BOARD_KERNEL_CMDLINE := mem=471M console=ttyMSM2,115200n8 androidboot.hardware=univa
+BOARD_KERNEL_CMDLINE := mem=471M console=ttyMSM2,115200n8 androidboot.hardware=qcom no_console_suspend
 BOARD_KERNEL_BASE := 0x12800000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00440000
